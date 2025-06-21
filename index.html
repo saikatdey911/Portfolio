@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saikat's Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Vanta.js and Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+  <!-- Inline styles for background -->
+  <style>
+    #vanta-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .social-links {
+      margin-top: auto;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #ffffff;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #00ffff;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌌 Vanta 3D Animated Background -->
+  <div id="vanta-bg"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav>
+    <div class="profile-section">
+      <img src="profile.png" alt="Profile Picture" />
+      <h2>SAIKAT DEY</h2>
+      <p>Civil Engineer</p>
+    </div>
+
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://github.com/saikatdey911" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/saikat-dey-43023a255" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1AyC8QSKWZ/" target="_blank" title="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/saikatdey911?igsh=cTNwdGNiNTUyeDE0" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Sections -->
+  <div class="main">
+    <section id="home" class="home active">
+      <div class="home-photo-bg"></div>
+      <div class="glass-box home-content">
+        <h1>I’m Saikat</h1>
+        <p>Civil Engineer</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="glass-box">
+        <h1>About Me</h1>
+        <p>Civil Engineer (B.Tech & Diploma) with AutoCAD & STAAD Pro skills. Entry-level professional passionate about design, planning & construction. Eager to grow & learn.</p>
+        <p>🌍Everyday is an Adventure when u are a👷‍♂Civil Engineer !Where creativity meets concrete !</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="glass-box">
+        <h1>Gallery</h1>
+        <div class="gallery-images">
+          <img src="gallery-img/Photo2.jpg" alt="Gallery 1">
+          <img src="gallery-img/Photo5.jpg" alt="Gallery 2">
+          <img src="gallery-img/Photo4.jpg" alt="Gallery 3">
+          <img src="gallery-img/Photo3.jpg" alt="Gallery 4">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="glass-box">
+        <h1>Contact</h1>
+        <p>Email: saikatdey911@gmail.com</p>
+        <p>Phone Number: +91 96418 79032</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Section Reveal on Scroll -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- Vanta Background Activation -->
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00ffff,
+      backgroundColor: 0x0d0d0d,
+      points: 14.00,
+      maxDistance: 20.00,
+      spacing: 17.00
+    });
+  </script>
+
+</body>
+</html>
+<footer class="footer" href="https://dgtion.com/">
+  <p>&copy; 2025 DGTION. All rights reserved. | Made with ❤️</p>
+</footer>

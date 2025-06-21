@@ -1,0 +1,409 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+/* ===== 3D Animated Background ===== */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: radial-gradient(circle at 20% 30%, #0ff3, transparent 25%),
+              radial-gradient(circle at 80% 70%, #f0f3, transparent 25%),
+              radial-gradient(circle at 50% 50%, #00f3, transparent 20%);
+  animation: moveBackground 20s linear infinite;
+  filter: blur(80px);
+  opacity: 0.25;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+  }
+  50% {
+    background-position: 50% 50%, 50% 50%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+  }
+}
+
+/* ===== Sidebar ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.07);
+  z-index: 2;
+}
+
+.profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0ff;
+  margin-bottom: 10px;
+}
+
+.profile-section h2 {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-section p {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+nav a {
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  transform: translateX(10px);
+  color: #0ff;
+}
+
+/* ===== Main Layout ===== */
+.main {
+  margin-left: 200px;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  height: 100vh;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.home, .about, .gallery, .contact {
+  opacity: 0;
+  transform: perspective(600px) rotateX(20deg);
+}
+
+section.active {
+  opacity: 1;
+  transform: perspective(600px) rotateX(0);
+}
+
+/* ===== Glassmorphic Box ===== */
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+  width: 80%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* ===== Home Section ===== */
+.home {
+  justify-content: flex-start;
+  padding-left: 100px;
+}
+
+.home-content {
+  max-width: 55%;
+  text-align: left;
+}
+
+/* ===== Hero Image Background ===== */
+.home-photo-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('./396d428d-5261-435b-91ca-dc2ef3758fd7.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0;
+  animation: fadeZoomIn 2s ease forwards;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes fadeZoomIn {
+  0%   { opacity: 0; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+/* ===== Gallery ===== */
+.gallery-images {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.gallery-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive (Mobile) ===== */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+    z-index: 3;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .profile-section img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+  }
+
+  .main {
+    margin-left: 0;
+    margin-top: 80px;
+  }
+
+  section {
+    flex-direction: column;
+    padding: 30px 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .glass-box {
+    width: 95%;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .home {
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-content {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .home-photo-bg {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .home-photo-bg {
+    height: 200px;
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-left: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  footer {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .profile-section img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+
+  section {
+    padding: 30px 15px;
+    text-align: center;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .glass-box {
+    width: 95%;
+    padding: 20px;
+    margin: auto;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .home-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .home-photo-bg {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    margin-top: 20px;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .gallery-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-images img {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  footer {
+    margin-left: 0;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 14px;
+  }
+}
