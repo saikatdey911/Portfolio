@@ -103,6 +103,17 @@ nav a:hover {
   color: #0ff;
 }
 
+.header__btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__btns .btn:nth-child(2) {
+  color: var(--secondary-color);
+  background-color: transparent;
+}
 /* ===== Main Layout ===== */
 .main {
   margin-left: 200px;
