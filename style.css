@@ -1,4 +1,4 @@
-f/* ===== Global Reset ===== */
+/* ===== Global Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -103,17 +103,50 @@ nav a:hover {
   color: #0ff;
 }
 
-.header__btns {
+
+
+
+/* From Uiverse.io by gharsh11032000 */ 
+/* From Uiverse.io by Creatlydev */ 
+.button {
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  gap: 0.35em;
+  padding: 0.75em 1em;
+  padding-right: 1.25em;
+  color: #fff;
+  border: 1px solid transparent;
+  font-weight: 700;
+  border-radius: 2em;
+  font-size: 1rem;
+  box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+  transition: transform 0.3s;
+
+  background: linear-gradient(
+    90deg,
+    rgba(77, 54, 208, 1) 0%,
+    rgba(132, 116, 254, 1) 100%
+  );
 }
 
-.header__btns .btn:nth-child(2) {
-  color: var(--secondary-color);
-  background-color: transparent;
+.button__icon {
+  width: 1.5em;
+  height: 1.5em;
 }
+
+.button:hover {
+  border-color: #f4f5f2;
+}
+
+.button:active {
+  transform: scale(0.98);
+  box-shadow: 0 0.5em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
+}
+
+
 /* ===== Main Layout ===== */
 .main {
   margin-left: 200px;
@@ -218,47 +251,6 @@ p {
 .gallery-images img:hover {
   transform: scale(1.05);
 }
-
-/* From Uiverse.io by gharsh11032000 */ 
-/* From Uiverse.io by Creatlydev */ 
-.button {
-  line-height: 1;
-  background-color: transparent;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.35em;
-  padding: 0.75em 1em;
-  padding-right: 1.25em;
-  color: #fff;
-  border: 1px solid transparent;
-  font-weight: 700;
-  border-radius: 2em;
-  font-size: 1rem;
-  box-shadow: 0 0.7em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
-  transition: transform 0.3s;
-
-  background: linear-gradient(
-    90deg,
-    rgba(77, 54, 208, 1) 0%,
-    rgba(132, 116, 254, 1) 100%
-  );
-}
-
-.button__icon {
-  width: 1.5em;
-  height: 1.5em;
-}
-
-.button:hover {
-  border-color: #f4f5f2;
-}
-
-.button:active {
-  transform: scale(0.98);
-  box-shadow: 0 0.5em 1.5em -0.5em hsla(249, 62%, 51%, 0.745);
-}
-
 
 /* ===== Responsive (Mobile) ===== */
 @media (max-width: 768px) {
@@ -368,6 +360,16 @@ footer {
     margin-top: 20px;
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   nav {
